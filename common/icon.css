@@ -1,0 +1,70 @@
+@font-face {
+  font-family: 'iconfont';  /* Project id 4305555 */
+  src: url('/common/iconfont/iconfont.woff2') format('woff2'),
+       url('/common/iconfont/iconfont.woff') format('woff'),
+       url('/common/iconfont/iconfont.ttf') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-gengduo:before {
+  content: "\e69b";
+}
+
+.icon-wode:before {
+  content: "\e60c";
+}
+
+.icon-anniu_guanbi_o:before {
+  content: "\eb75";
+}
+
+.icon-tuichu:before {
+  content: "\e695";
+}
+
+.icon-bofang:before {
+  content: "\e691";
+}
+
+.icon-zanting:before {
+  content: "\e6a1";
+}
+
+.icon-liwu:before {
+  content: "\e650";
+}
+
+.icon-faxian:before {
+  content: "\e686";
+}
+
+.icon-live-time:before {
+  content: "\e616";
+}
+
+.icon-meiyan:before {
+  content: "\e631";
+}
+
+.icon-jifen-:before {
+  content: "\e62a";
+}
+
+.icon-fenxiang:before {
+  content: "\e816";
+}
+
+.icon-jingtoufanzhuan:before {
+  content: "\e621";
+}
+
+.icon-gaoqingxidu:before {
+  content: "\e865";
+}
