@@ -30,8 +30,12 @@
 
     <!-- 图片列表-瀑布流 -->
     <view class="flex flex-wrap">
-      <template v-for="item in 10" :key="item">
-        <view class="img-container rounded" >
+      <template v-for="(item, index) in tempList">
+        <view
+          class="img-container rounded"
+          :key="item.id"
+          @click="toLivePage(item)"
+        >
           <!-- 背景图片本身 -->
           <image
             class="img-size"
@@ -66,11 +70,49 @@
 export default {
   data() {
     return {
-      title: "Hisasd, liveStream!!!",
+      tempList: [
+        {
+          id: "1",
+        },
+        {
+          id: "2",
+        },
+        {
+          id: "3",
+        },
+        {
+          id: "4",
+        },
+        {
+          id: "5",
+        },
+        {
+          id: "6",
+        },
+        {
+          id: "7",
+        },
+        {
+          id: "8",
+        },
+        {
+          id: "9",
+        },
+        {
+          id: "10",
+        },
+      ],
     };
   },
   onLoad() {},
-  methods: {},
+  methods: {
+    toLivePage(item) {
+      console.log("toLivePage", item);
+      uni.navigateTo({
+        url: "/pages/live/live",
+      });
+    },
+  },
 };
 </script>
 
