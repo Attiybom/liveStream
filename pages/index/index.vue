@@ -28,40 +28,40 @@
       </swiper-item>
     </swiper>
 
-    <!-- 瀑布流 -->
+    <!-- 图片列表-瀑布流 -->
     <view class="flex flex-wrap">
-      <view class="img-container rounded">
-        <image
-          class="img-size"
-          src="../../static/demo/1.jpg"
-          mode="aspectFill"
-        ></image>
-        <view class="rounded-circle left-icon px-2 flex align-center">
-          <text class="iconfont icon-jifen- text-warning mr-1" ></text>
-		  <text class="text-white font">0</text>
+      <template v-for="(item, index) in tempList">
+        <view
+          class="img-container rounded"
+          :key="item.id"
+          @click="toLivePage(item)"
+        >
+          <!-- 背景图片本身 -->
+          <image
+            class="img-size"
+            src="../../static/demo/1.jpg"
+            mode="aspectFill"
+          ></image>
+          <!-- 左上积分 -->
+          <view class="rounded-circle left-top-icon px-2 flex align-center">
+            <text class="iconfont icon-jifen- text-warning mr-1"></text>
+            <text class="text-white font-sm">0</text>
+          </view>
+          <!-- 右上角人气 -->
+          <view class="rounded-circle right-top-icon px-2 flex align-center">
+            <text class="font-sm text-white">人气：</text>
+            <text class="text-white font-sm">0</text>
+          </view>
+          <!-- 左下标题 -->
+          <view class="rounded-circle left-bottom-icon px-2 flex align-center">
+            <text class="font-sm text-white">标题</text>
+          </view>
+          <view class="rounded-circle right-bottom-icon px-2 flex align-center">
+            <text class="circle-icon rounded-circle bg-danger mr-1"></text>
+            <text class="text-white font-sm">已结束</text>
+          </view>
         </view>
-      </view>
-      <view class="img-container">
-        <image
-          class="img-size"
-          src="../../static/demo/1.jpg"
-          mode="aspectFill"
-        ></image>
-      </view>
-      <view class="img-container">
-        <image
-          class="img-size"
-          src="../../static/demo/1.jpg"
-          mode="aspectFill"
-        ></image>
-      </view>
-      <view class="img-container">
-        <image
-          class="img-size"
-          src="../../static/demo/1.jpg"
-          mode="aspectFill"
-        ></image>
-      </view>
+      </template>
     </view>
   </view>
 </template>
@@ -70,11 +70,49 @@
 export default {
   data() {
     return {
-      title: "Hisasd, liveStream!!!",
+      tempList: [
+        {
+          id: "1",
+        },
+        {
+          id: "2",
+        },
+        {
+          id: "3",
+        },
+        {
+          id: "4",
+        },
+        {
+          id: "5",
+        },
+        {
+          id: "6",
+        },
+        {
+          id: "7",
+        },
+        {
+          id: "8",
+        },
+        {
+          id: "9",
+        },
+        {
+          id: "10",
+        },
+      ],
     };
   },
   onLoad() {},
-  methods: {},
+  methods: {
+    toLivePage(item) {
+      console.log("toLivePage", item);
+      uni.navigateTo({
+        url: "/pages/live/live",
+      });
+    },
+  },
 };
 </script>
 
@@ -96,10 +134,31 @@ export default {
   height: 365rpx;
 }
 
-.left-icon {
+.left-top-icon {
   position: absolute;
   left: 15rpx;
   top: 15rpx;
   background-color: rgba(0, 0, 0, 0.4);
+}
+.right-top-icon {
+  position: absolute;
+  right: 15rpx;
+  top: 15rpx;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.left-bottom-icon {
+  position: absolute;
+  left: 15rpx;
+  bottom: 15rpx;
+}
+.right-bottom-icon {
+  position: absolute;
+  right: 15rpx;
+  bottom: 15rpx;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.circle-icon {
+  width: 20rpx;
+  height: 20rpx;
 }
 </style>
